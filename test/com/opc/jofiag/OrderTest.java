@@ -22,25 +22,21 @@ public class OrderTest
 
     Order order = new Order();
 
+
     @Test
-    public void Given_Nothing_When_DisplayMenuSelection_Then_DisplayText() {
-        order.displayAvailableMenu();
-        assertEquals(false, outContent.toString().isEmpty());
-    }
-    @Test
-    public void Given_Chicken_When_AskForMenuSelected_Then_ShouldDisplayCorrectSentence(){
+    public void Given_Chicken_When_DisplayMenuSelected_Then_DisplayChickenSentence(){
         order.displayMenuSelected(1);
-        assertEquals("Vous avez choisi le menu 1\n", outContent.toString().replace("\r\n", "\n"));
+        assertEquals("Vous avez choisi le menu : Poulet\n", outContent.toString().replace("\r\n", "\n"));
     }
     @Test
-    public void Given_Beef_When_AskForMenuSelected_Then_ShouldDisplayCorrectSentence(){
+    public void Given_Beef_When_DisplayMenuSelected_Then_DisplayBeefSentence(){
         order.displayMenuSelected(2);
-        assertEquals("Vous avez choisi le menu 2\n", outContent.toString().replace("\r\n", "\n"));
+        assertEquals("Vous avez choisi le menu : Boeuf\n", outContent.toString().replace("\r\n", "\n"));
     }
     @Test
-    public void Given_Vegetarian_When_AskForMenuSelected_Then_ShouldDisplayCorrectSentence(){
+    public void Given_Vegetarian_When_DisplayMenuSelected_Then_DisplayVegetarianSentence(){
         order.displayMenuSelected(3);
-        assertEquals("Vous avez choisi le menu 3\n", outContent.toString().replace("\r\n", "\n"));
+        assertEquals("Vous avez choisi le menu : végétarien\n", outContent.toString().replace("\r\n", "\n"));
     }
 
 }
